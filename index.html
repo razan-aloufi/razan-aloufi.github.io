@@ -1,0 +1,462 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="description" content="Razan Aloufi — Cybersecurity Specialist">
+<link rel="icon" href="logo.png">
+<title>Razan Aloufi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;600;800&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Layout: deliberate single light theme. Animated network mesh behind the hero, CV sections stacked below and animating in on scroll. */
+:root{
+  --bg:#F5F9F7; --bg-2:#ECF3F0; --surface:#FFFFFF; --line:#D9E5E0;
+  --fg:#0B1F1A; --muted:#566F68; --accent:#02352C; --accent-2:#178A6A; --soft:#E1EFE9;
+  --f-display:"Unbounded","Arial Black",system-ui,sans-serif;
+  --f-body:"Manrope","Segoe UI",system-ui,sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--bg);color:var(--fg);font-family:var(--f-body);font-size:17px;line-height:1.65;overflow-x:hidden}
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:2px solid var(--accent-2);outline-offset:4px;border-radius:6px}
+h1,h2,h3{font-family:var(--f-display);margin:0;line-height:1.1;text-wrap:balance}
+.wrap{max-width:1140px;margin-inline:auto;padding-inline:24px}
+
+/* nav */
+.nav{position:fixed;top:0;left:0;right:0;z-index:20;padding-top:env(safe-area-inset-top,0px);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;height:64px}
+.logo{display:flex;align-items:center;text-decoration:none}
+.logo img{display:block;height:36px;width:auto;transition:transform .3s}
+.logo:hover img{transform:scale(1.08)}
+.nav ul{list-style:none;display:flex;gap:24px;margin:0;padding:0;font-size:14px;font-weight:600}
+.nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--accent)}
+
+/* hero */
+.hero{position:relative;padding-block:150px 110px;overflow:hidden;isolation:isolate}
+#mesh{position:absolute;inset:0;width:100%;height:100%;z-index:-1}
+.hero::after{content:"";position:absolute;inset:0;z-index:-1;background:radial-gradient(55% 65% at 18% 45%,var(--bg) 20%,transparent 75%),linear-gradient(to bottom,transparent 65%,var(--bg));pointer-events:none}
+.hero h1{font-size:clamp(46px,9vw,116px);font-weight:800;letter-spacing:-.035em;color:var(--accent)}
+.hero h1 .row{display:block;white-space:nowrap}
+.hero h1 .ch{display:inline-block}
+/* lightbox */
+.cert-open{all:unset;cursor:pointer;font-family:var(--f-display);font-size:20px;font-weight:600;line-height:1.25;display:inline-flex;align-items:center;gap:10px;border-bottom:1px solid rgba(111,227,193,.45);padding-bottom:2px;transition:border-color .25s,color .25s}
+.cert-open:hover{color:#6FE3C1;border-color:#6FE3C1}
+.cert-open:focus-visible{outline:2px solid #6FE3C1;outline-offset:4px;border-radius:4px}
+.cert-open .eye{font-size:13px;font-family:var(--f-body);font-weight:700;opacity:.8}
+.lb{position:fixed;inset:0;z-index:50;background:rgba(5,20,16,.82);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);display:grid;place-items:center;padding:24px}
+.lb figure{margin:0;max-width:min(1000px,100%);display:flex;flex-direction:column;gap:12px}
+.lb img{width:100%;height:auto;max-height:80vh;object-fit:contain;border-radius:14px;box-shadow:0 30px 80px -20px rgba(0,0,0,.6);background:#fff}
+.lb figcaption{display:flex;justify-content:space-between;align-items:center;gap:12px;color:#EAF7F2;font-weight:600}
+.lb button{font:700 14px var(--f-body);background:#fff;color:var(--accent);border:0;border-radius:999px;padding:9px 16px;cursor:pointer}
+@media (prefers-reduced-motion:no-preference){.lb:not([hidden]) figure{animation:pop .35s cubic-bezier(.2,.8,.2,1)}@keyframes pop{from{opacity:0;transform:scale(.94)}}}
+.title{margin-top:22px;font-family:var(--f-display);font-weight:600;font-size:clamp(18px,2.4vw,26px);color:var(--accent-2)}
+.contacts{display:flex;flex-wrap:wrap;gap:10px;margin-top:34px}
+.pill{display:inline-flex;align-items:center;gap:8px;padding:10px 16px;border-radius:999px;border:1px solid var(--line);background:var(--surface);font-size:14.5px;font-weight:600;text-decoration:none;color:var(--fg);transition:transform .25s,border-color .25s,box-shadow .25s}
+.pill:hover{transform:translateY(-2px);border-color:var(--accent-2);box-shadow:0 10px 24px -14px var(--accent)}
+.pill.primary{background:var(--accent);color:#fff;border-color:var(--accent)}
+button.pill{cursor:pointer;font-family:var(--f-body)}
+.copied{align-self:center;color:var(--accent-2);font-weight:700;font-size:14px}
+
+/* marquee */
+.marquee{border-block:1px solid var(--line);background:var(--accent);overflow:hidden;padding-block:18px}
+.track{display:flex;gap:40px;width:max-content;font-family:var(--f-display);font-weight:600;font-size:18px;color:#DDF3EA}
+.track span{display:flex;align-items:center;gap:40px;white-space:nowrap}
+.track span::after{content:"✦";color:#6FE3C1;font-size:12px}
+
+/* sections */
+section.block{padding-block:110px 0}
+.head{display:flex;align-items:center;gap:18px;margin-bottom:40px}
+.head h2{font-size:clamp(28px,4.4vw,52px);font-weight:800;letter-spacing:-.03em;color:var(--accent)}
+.head::after{content:"";flex:1;height:1px;background:var(--line)}
+.summary{font-size:clamp(19px,2.2vw,24px);line-height:1.6;max-width:62ch;margin:0;font-weight:500}
+
+/* experience */
+.role{display:flex;flex-wrap:wrap;gap:8px 16px;align-items:baseline;margin-bottom:32px}
+.role h3{font-size:clamp(20px,2.6vw,28px);font-weight:600}
+.role span{font-family:var(--f-display);font-size:15px;color:var(--accent-2)}
+.groups{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+.group{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:26px 26px 22px;position:relative;overflow:hidden;transition:transform .35s cubic-bezier(.2,.7,.2,1),border-color .35s,box-shadow .35s}
+.group::before{content:"";position:absolute;inset:0;background:radial-gradient(360px circle at var(--mx,50%) var(--my,0%),color-mix(in srgb,var(--accent-2) 12%,transparent),transparent 50%);opacity:0;transition:opacity .35s;pointer-events:none}
+.group:hover{transform:translateY(-4px);border-color:color-mix(in srgb,var(--accent-2) 50%,var(--line));box-shadow:0 22px 40px -28px var(--accent)}
+.group:hover::before{opacity:1}
+.group.wide{grid-column:1/-1}
+.group h4{margin:0 0 14px;font:700 16px var(--f-display);color:var(--accent)}
+ul.ev{margin:0;padding:0;list-style:none;display:grid;gap:10px}
+ul.ev li{position:relative;padding-left:22px;color:#2A3F39;font-size:15.5px}
+ul.ev li::before{content:"";position:absolute;left:2px;top:.68em;width:9px;height:9px;border-radius:50%;border:2px solid var(--accent-2)}
+
+/* projects */
+.proj{display:grid;grid-template-columns:70px 1fr;gap:20px;padding-block:28px;border-top:1px solid var(--line);transition:padding .3s}
+.proj:last-child{border-bottom:1px solid var(--line)}
+.proj > *{min-width:0}
+.proj .i{font-family:var(--f-display);color:var(--accent-2);font-size:14px;padding-top:6px}
+.proj h3{font-size:clamp(19px,2.2vw,25px);font-weight:600;transition:color .3s;margin-bottom:12px}
+.proj:hover{padding-left:10px}
+.proj:hover h3{color:var(--accent-2)}
+
+/* two-col cards */
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.duo > *{min-width:0}
+.tile{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.tile h3{font-size:19px;font-weight:600;color:var(--fg)}
+.tile .meta{color:var(--muted);font-size:15px;margin-top:6px;font-variant-numeric:tabular-nums}
+.tile ul{margin:14px 0 0;padding-left:18px;color:#2A3F39}
+.gpa{display:flex;align-items:baseline;gap:8px;margin-top:18px}
+.gpa b{font-family:var(--f-display);font-size:44px;font-weight:800;color:var(--accent);letter-spacing:-.03em;font-variant-numeric:tabular-nums}
+.gpa span{color:var(--muted)}
+
+/* skills */
+.skills{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.skill{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:14px;background:var(--surface);border:1px solid var(--line);font-weight:600;font-size:15.5px;transition:background .25s,color .25s,transform .25s}
+.skill::before{content:"";width:8px;height:8px;border-radius:2px;background:var(--accent-2);transform:rotate(45deg);flex:none}
+.skill:hover{background:var(--accent);color:#fff;transform:translateX(4px)}
+.skill:hover::before{background:#6FE3C1}
+
+.langs{display:flex;gap:18px;flex-wrap:wrap}
+.lang{flex:1;min-width:220px;background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px 28px;display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.lang b{font-family:var(--f-display);font-size:22px;font-weight:600}
+.lang span{color:var(--muted)}
+
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.cert{border-radius:20px;padding:30px;background:linear-gradient(145deg,var(--accent),#0A4A3D);color:#EAF7F2;min-height:170px;display:flex;flex-direction:column;justify-content:flex-end;gap:6px;position:relative;overflow:hidden}
+.cert::after{content:"";position:absolute;width:170px;height:170px;border-radius:50%;border:1px solid rgba(111,227,193,.35);top:-70px;right:-50px}
+.cert::before{content:"";position:absolute;width:110px;height:110px;border-radius:50%;border:1px solid rgba(111,227,193,.25);top:-40px;right:-20px}
+.cert h3{font-size:20px;font-weight:600}
+.cert span{font-size:14.5px;color:#A9D8C7;font-variant-numeric:tabular-nums}
+
+/* highlights */
+.hl{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px}
+.hl h3{font-size:20px;font-weight:600;margin-bottom:18px}
+.steps{display:grid;gap:12px}
+.step{display:grid;grid-template-columns:90px 1fr;gap:12px;align-items:start}
+.step dt{font:700 12px var(--f-display);letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:var(--soft);color:var(--accent);text-align:center}
+.step.r dt{background:var(--accent);color:#fff}
+.step dd{margin:0;color:#2A3F39;font-size:15.5px}
+
+footer{margin-top:120px;border-top:1px solid var(--line);padding-block:28px;color:var(--muted);font-size:14px}
+
+@media (max-width:900px){
+  .nav ul{display:none}
+  .hero{padding-block:120px 80px}
+  .groups,.duo,.certs,.skills{grid-template-columns:1fr}
+  .proj{grid-template-columns:1fr;gap:4px}
+  section.block{padding-block:80px 0}
+  .step{grid-template-columns:1fr;gap:6px}
+  .step dt{justify-self:start}
+}
+@media (max-width:420px){.hero h1 .row{white-space:normal}}
+
+@media (prefers-reduced-motion:no-preference){
+  .hero h1 .ch{animation:rise .9s cubic-bezier(.2,.8,.2,1) both;animation-delay:calc(var(--i) * 40ms + 120ms)}
+  @keyframes rise{from{transform:translateY(60%) rotate(4deg);opacity:0;filter:blur(6px)}}
+  .title,.contacts{animation:fade 1s cubic-bezier(.2,.8,.2,1) both}
+  .title{animation-delay:.6s}.contacts{animation-delay:.8s}
+  @keyframes fade{from{opacity:0;transform:translateY(16px)}}
+  .track{animation:slide 45s linear infinite}
+  .marquee:hover .track{animation-play-state:paused}
+  @keyframes slide{to{transform:translateX(-50%)}}
+  @supports (animation-timeline:view()){
+    .reveal{animation:up linear both;animation-timeline:view();animation-range:entry 0% entry 55%}
+    @keyframes up{from{opacity:0;transform:translateY(44px) scale(.98)}}
+  }
+}
+
+[hidden]{display:none!important}
+img{max-width:100%}
+body{margin:0}
+</style>
+</head>
+<body>
+
+
+<header class="nav">
+  <div class="wrap">
+    <a class="logo" href="#top" aria-label="Back to top"><img src="logo.png" alt="Razan Aloufi logo" width="46" height="39"></a>
+    <ul>
+      <li><a href="#summary">Summary</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#highlights">Highlights</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <canvas id="mesh" aria-hidden="true"></canvas>
+  <div class="wrap">
+    <h1 aria-label="Razan Aloufi"><span class="row" data-split>Razan</span><span class="row" data-split>Aloufi</span></h1>
+    <div class="title">Cybersecurity Specialist</div>
+    <div class="contacts">
+      <a class="pill primary" href="mailto:rjaloufii@gmail.com">rjaloufii@gmail.com ↗</a>
+      <a class="pill" href="https://wa.me/966569725022" target="_blank" rel="noopener">WhatsApp 0569725022 ↗</a>
+      <a class="pill" href="https://github.com/razan-aloufi" target="_blank" rel="noopener">GitHub ↗</a>
+      <a class="pill" href="https://www.linkedin.com/in/razan-aloufi-bb42a9219/" target="_blank" rel="noopener">LinkedIn ↗</a>
+    </div>
+  </div>
+</section>
+
+<div class="marquee" aria-hidden="true">
+  <div class="track">
+    <span>Cloud Security &amp; Governance</span><span>Infrastructure as Code (Terraform)</span><span>Multi-Cloud Security (AWS &amp; Azure)</span><span>Identity &amp; Access Management (IAM)</span><span>NCA CCC &amp; PDPL Compliance</span><span>Static Code Analysis (Checkov, Bridgecrew)</span>
+    <span>Cloud Security &amp; Governance</span><span>Infrastructure as Code (Terraform)</span><span>Multi-Cloud Security (AWS &amp; Azure)</span><span>Identity &amp; Access Management (IAM)</span><span>NCA CCC &amp; PDPL Compliance</span><span>Static Code Analysis (Checkov, Bridgecrew)</span>
+  </div>
+</div>
+
+<main>
+  <section class="block" id="summary">
+    <div class="wrap reveal">
+      <div class="head"><h2>Professional Summary</h2></div>
+      <p class="summary">Cybersecurity Specialist (Associate Degree) with focused expertise in Cloud Security and Governance. Proven hands-on experience in Infrastructure as Code (IaC) using Terraform to automate and secure multi-cloud environments. Skilled in implementing the Principle of Least Privilege (PoLP), identity management, and automated security auditing with Checkov. Dedicated to analyzing complex code configurations and ensuring infrastructure hardening and data protection compliance.</p>
+    </div>
+  </section>
+
+  <section class="block" id="experience">
+    <div class="wrap">
+      <div class="head reveal"><h2>Work Experience</h2></div>
+      <div class="role reveal"><h3>Cloud Security Specialist</h3><span>Ascpius</span></div>
+      <div class="groups">
+        <div class="group reveal">
+          <h4>Cloud Security &amp; Infrastructure</h4>
+          <ul class="ev">
+            <li>Hardened reverse-proxy templates to prevent configuration loss during automated rebuilds, binding all production domains to protected custom configurations; deployed with zero downtime</li>
+            <li>Diagnosed and resolved a WAF false positive blocking legitimate file uploads; implemented a scoped exception preserving full XSS protection and documented residual risk</li>
+          </ul>
+        </div>
+        <div class="group reveal">
+          <h4>Access Control &amp; IAM</h4>
+          <ul class="ev">
+            <li>Authored and scoped least-privilege IAM policies for users and roles, applying resource-level restrictions and condition keys</li>
+            <li>Audited authorized vs. unauthorized SSH keys across production servers; revoked outdated keys and managed key rotation</li>
+            <li>Authored the organization's SSH Key Management Policy covering cryptographic standards (Ed25519 / RSA-4096), secure storage, monthly rotation, access lifecycle, weekly audits, and incident response</li>
+            <li>Administer GitHub repository access for team members, granting and revoking permissions at the appropriate level (read / write / admin) based on role</li>
+          </ul>
+        </div>
+        <div class="group wide reveal">
+          <h4>Secure Architecture &amp; Deployment</h4>
+          <ul class="ev">
+            <li>Designed, security-reviewed, and deployed a secure cloud storage system for sensitive financial, health, and employee data — implementing encryption, data segregation, in-Kingdom residency, and purpose-based deletion, governed by NCA CCC and PDPL</li>
+            <li>Provisioned and hardened a production server end-to-end — KMS-encrypted storage, least-privilege instance profile, SSH-free administrative access, network isolation, load-balancer integration with host-based routing, wildcard TLS, and DNS mapping</li>
+            <li>Implemented a centralized, policy-driven backup and recovery system with full restore testing (~1-minute RTO), KMS encryption, least-privilege access, and malware detection</li>
+          </ul>
+        </div>
+        <div class="group reveal">
+          <h4>Security Assessment &amp; Auditing</h4>
+          <ul class="ev">
+            <li>Conducted full infrastructure audits across production servers — inventorying compute resources, reviewing firewall/security-group rules for over-permissive access, and tightening ingress to least-privilege sources</li>
+            <li>Performed cloud security assessments identifying Medium-to-High risk findings across storage encryption, credential management, and public network exposure; remediated within scope following a controlled, authorization-based process</li>
+          </ul>
+        </div>
+        <div class="group reveal">
+          <h4>Cost Optimization</h4>
+          <ul class="ev">
+            <li>Estimated and compared cloud service costs (compute, storage) to inform architecture and right-sizing decisions</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="wrap">
+      <div class="head reveal"><h2>Projects</h2></div>
+      <div class="proj reveal"><span class="i">/01</span><div><h3>Secure Azure Storage Infrastructure</h3>
+        <ul class="ev">
+          <li>Developed a secure cloud storage solution on Azure using Terraform to automate infrastructure deployment.</li>
+          <li>Implemented advanced security configurations, including HTTPS enforcement, TLS 1.2, and disabled public network access to ensure data privacy.</li>
+          <li>Performed automated security auditing using Checkov to identify and remediate potential misconfigurations before deployment</li>
+        </ul></div></div>
+      <div class="proj reveal"><span class="i">/02</span><div><h3>Multi-Cloud Identity &amp; Access Management (IAM)</h3>
+        <ul class="ev">
+          <li>Engineered a unified IAM framework to manage user identities across AWS and Azure environments using a single codebase.</li>
+          <li>Applied the Principle of Least Privilege (PoLP) by configuring Read-Only access policies for security monitoring groups.</li>
+          <li>Automated group memberships and policy attachments to ensure consistent cloud governance and reduce human error.</li>
+        </ul></div></div>
+      <div class="proj reveal"><span class="i">/03</span><div><h3>Cloud Governance Framework</h3>
+        <ul class="ev">
+          <li>Designed a governance structure using Terraform to enforce security standards across multiple cloud providers.</li>
+          <li>Established separation of duties by creating distinct security roles and groups for auditing and operations teams.</li>
+          <li>Utilized Git/GitHub for version control and documentation of infrastructure-as-code (IaC) templates.</li>
+        </ul></div></div>
+    </div>
+  </section>
+
+  <section class="block" id="education">
+    <div class="wrap">
+      <div class="head reveal"><h2>Education</h2></div>
+      <div class="tile reveal">
+        <h3>Diploma of Science – Cyber Security</h3>
+        <div class="meta">Qassim University</div>
+        <ul><li>Concentrations: Cloud Security</li></ul>
+        <div class="gpa"><b>4.72</b><span>GPA out of 5.00</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap">
+      <div class="head reveal"><h2>Skills</h2></div>
+      <div class="skills reveal">
+        <div class="skill">Cloud Security &amp; Governance</div>
+        <div class="skill">Infrastructure as Code (Terraform)</div>
+        <div class="skill">Multi-Cloud Security (AWS &amp; Azure)</div>
+        <div class="skill">Identity &amp; Access Management (IAM)</div>
+        <div class="skill">Least-Privilege Policy Design (PoLP)</div>
+        <div class="skill">AWS IAM &amp; Azure Entra ID</div>
+        <div class="skill">Role-Based Access Control (RBAC)</div>
+        <div class="skill">Network Security Groups &amp; Firewall Hardening</div>
+        <div class="skill">Encryption &amp; Key Management (KMS, TLS/SSL)</div>
+        <div class="skill">Secure Architecture &amp; Server Hardening</div>
+        <div class="skill">Backup, Recovery &amp; Restore Testing</div>
+        <div class="skill">Cloud Security Auditing &amp; Risk Assessment</div>
+        <div class="skill">Static Code Analysis (Checkov, Bridgecrew)</div>
+        <div class="skill">NCA CCC &amp; PDPL Compliance</div>
+        <div class="skill">Git &amp; GitHub Access Management</div>
+        <div class="skill">Linux (Kali Linux) &amp; Windows Server</div>
+        <div class="skill">Analytical Problem Solving</div>
+        <div class="skill">Strategic Security Thinking</div>
+        <div class="skill">Detail-Oriented</div>
+        <div class="skill">Continuous Learning</div>
+        <div class="skill">Time Management &amp; Multitasking</div>
+        <div class="skill">Leadership &amp; Teamwork</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="languages">
+    <div class="wrap">
+      <div class="head reveal"><h2>Languages</h2></div>
+      <div class="langs reveal">
+        <div class="lang"><b>Arabic</b><span>Native</span></div>
+        <div class="lang"><b>English</b><span>Professional Working</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="certifications">
+    <div class="wrap">
+      <div class="head reveal"><h2>Professional Certifications</h2></div>
+      <div class="certs">
+        <div class="cert reveal"><h3><button class="cert-open" type="button" data-img="cert-securityplus.jpg" data-title="CompTIA Security+">Security+ <span class="eye">View ↗</span></button></h3><span>Jan 2025 · 2025–2028</span></div>
+        <div class="cert reveal"><h3><button class="cert-open" type="button" data-img="cert-az900.jpg" data-title="Microsoft Azure Fundamentals (AZ-900)">Microsoft Azure Fundamental AZ-900 <span class="eye">View ↗</span></button></h3><span>Microsoft · Jan 2026</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="knowledge">
+    <div class="wrap">
+      <div class="head reveal"><h2>Knowledge</h2></div>
+      <div class="duo">
+        <div class="tile reveal"><h3>Cybersecurity Controls for Cloud Computing (CCC) from NCA</h3></div>
+        <div class="tile reveal"><h3>Saudi Personal Data Protection Law (PDPL)</h3><div class="meta">Data protection requirements and compliance principles</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="highlights">
+    <div class="wrap">
+      <div class="head reveal"><h2>Problem-Solving Highlights</h2></div>
+      <div class="duo">
+        <div class="hl reveal">
+          <h3>Full-Site Production Outage (HTTP 500)</h3>
+          <dl class="steps">
+            <div class="step"><dt>Problem</dt><dd>Entire site down with HTTP 500 errors caused by an SSL redirect conflict between the load balancer and reverse proxy.</dd></div>
+            <div class="step"><dt>Action</dt><dd>Diagnosed the root cause and permanently resolved the conflict.</dd></div>
+            <div class="step r"><dt>Result</dt><dd>Full site restored; verified through repeated rebuild and restart testing.</dd></div>
+          </dl>
+        </div>
+        <div class="hl reveal">
+          <h3>Recurring Outages from Config Loss on Automated Rebuilds</h3>
+          <dl class="steps">
+            <div class="step"><dt>Problem</dt><dd>Recurring production outages caused by reverse-proxy configuration being lost during automated rebuilds.</dd></div>
+            <div class="step"><dt>Action</dt><dd>Bound all production domains to protected custom templates that prevent configuration loss.</dd></div>
+            <div class="step r"><dt>Result</dt><dd>Outages permanently eliminated; deployed with zero downtime and verified through repeated forced-rebuild testing.</dd></div>
+          </dl>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer><div class="wrap">© 2026 Razan Aloufi</div></footer>
+
+<div class="lb" id="lb" hidden role="dialog" aria-modal="true" aria-labelledby="lb-cap">
+  <figure>
+    <img id="lb-img" src="" alt="">
+    <figcaption><span id="lb-cap"></span><button type="button" id="lb-close">Close ✕</button></figcaption>
+  </figure>
+</div>
+
+<script>
+(function(){
+  var i=0;
+  document.querySelectorAll('[data-split]').forEach(function(el){
+    var t=el.textContent;el.textContent='';
+    t.split('').forEach(function(c){var s=document.createElement('span');s.className='ch';s.style.setProperty('--i',i++);s.textContent=c;s.setAttribute('aria-hidden','true');el.appendChild(s)});
+  });
+
+  document.querySelectorAll('.group').forEach(function(c){
+    c.addEventListener('pointermove',function(e){var r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')});
+  });
+
+  var lb=document.getElementById('lb'),lbImg=document.getElementById('lb-img'),lbCap=document.getElementById('lb-cap'),lbClose=document.getElementById('lb-close'),last=null;
+  function closeLb(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus()}
+  document.querySelectorAll('.cert-open').forEach(function(b){
+    b.addEventListener('click',function(){
+      last=b;lbImg.src=b.getAttribute('data-img');lbImg.alt=b.getAttribute('data-title')+' certificate';lbCap.textContent=b.getAttribute('data-title');
+      lb.hidden=false;document.body.style.overflow='hidden';lbClose.focus();
+    });
+  });
+  lbClose.addEventListener('click',closeLb);
+  lb.addEventListener('click',function(e){if(e.target===lb)closeLb()});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)closeLb()});
+
+  var cv=document.getElementById('mesh'),ctx=cv.getContext('2d');
+  var reduce=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var W,H,dpr,pts=[],mouse={x:-999,y:-999},running=true;
+  function size(){
+    dpr=Math.min(window.devicePixelRatio||1,2);
+    W=cv.clientWidth;H=cv.clientHeight;cv.width=W*dpr;cv.height=H*dpr;ctx.setTransform(dpr,0,0,dpr,0,0);
+    var n=Math.round(Math.min(90,W*H/13000));pts=[];
+    for(var k=0;k<n;k++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,lock:Math.random()<.14,ph:Math.random()*6.28});
+  }
+  function frame(t){
+    ctx.clearRect(0,0,W,H);
+    var D=140;
+    for(var a=0;a<pts.length;a++){
+      var p=pts[a];
+      if(!reduce){p.x+=p.vx;p.y+=p.vy;if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;}
+      var mdx=p.x-mouse.x,mdy=p.y-mouse.y,md=Math.sqrt(mdx*mdx+mdy*mdy);
+      if(md<180){ctx.strokeStyle='rgba(23,138,106,'+(.55*(1-md/180))+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(mouse.x,mouse.y);ctx.stroke();}
+      for(var b=a+1;b<pts.length;b++){
+        var q=pts[b],dx=p.x-q.x,dy=p.y-q.y,d=dx*dx+dy*dy;
+        if(d<D*D){d=Math.sqrt(d);ctx.strokeStyle='rgba(2,53,44,'+(.14*(1-d/D))+')';ctx.lineWidth=1;ctx.beginPath();ctx.moveTo(p.x,p.y);ctx.lineTo(q.x,q.y);ctx.stroke();}
+      }
+    }
+    for(var c=0;c<pts.length;c++){
+      var s=pts[c];
+      ctx.fillStyle=s.lock?'#178A6A':'rgba(2,53,44,.35)';
+      ctx.beginPath();ctx.arc(s.x,s.y,s.lock?2.8:1.7,0,6.283);ctx.fill();
+      if(s.lock){var r=6+3*Math.sin((t||0)/600+s.ph);ctx.strokeStyle='rgba(23,138,106,.35)';ctx.beginPath();ctx.arc(s.x,s.y,r,0,6.283);ctx.stroke();}
+    }
+    if(!reduce&&running)requestAnimationFrame(frame);
+  }
+  size();frame(0);
+  window.addEventListener('resize',function(){size();if(reduce)frame(0)});
+  var hero=document.querySelector('.hero');
+  hero.addEventListener('pointermove',function(e){var r=cv.getBoundingClientRect();mouse.x=e.clientX-r.left;mouse.y=e.clientY-r.top;if(reduce)frame(0)});
+  hero.addEventListener('pointerleave',function(){mouse.x=mouse.y=-999});
+  if('IntersectionObserver' in window&&!reduce){
+    new IntersectionObserver(function(es){var v=es[0].isIntersecting;if(v&&!running){running=true;requestAnimationFrame(frame)}running=v}).observe(hero);
+  }
+})();
+</script>
+
+</body>
+</html>
