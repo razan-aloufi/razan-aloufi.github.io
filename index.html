@@ -179,6 +179,14 @@ footer{margin-top:120px;border-top:1px solid var(--line);padding-block:28px;colo
 [hidden]{display:none!important}
 img{max-width:100%}
 body{margin:0}
+
+.sgroups{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sgroup{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:24px 26px}
+.sgroup h4{margin:0 0 14px;font:700 16px var(--f-display);color:var(--accent)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:14px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--soft);color:var(--fg);transition:background .25s,color .25s}
+.chip:hover{background:var(--accent);color:#fff}
+@media (max-width:900px){.sgroups{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -320,30 +328,11 @@ body{margin:0}
   <section class="block" id="skills">
     <div class="wrap">
       <div class="head reveal"><h2>Skills</h2></div>
-      <div class="skills reveal">
-        <div class="skill">Cloud Security &amp; Governance</div>
-        <div class="skill">Infrastructure as Code (Terraform)</div>
-        <div class="skill">Multi-Cloud Security (AWS &amp; Azure)</div>
-        <div class="skill">Identity &amp; Access Management (IAM)</div>
-        <div class="skill">Least-Privilege Policy Design (PoLP)</div>
-        <div class="skill">AWS IAM &amp; Azure Entra ID</div>
-        <div class="skill">Role-Based Access Control (RBAC)</div>
-        <div class="skill">Network Security Groups &amp; Firewall Hardening</div>
-        <div class="skill">Encryption &amp; Key Management (KMS, TLS/SSL)</div>
-        <div class="skill">Content Delivery &amp; Edge Security (CDN, OAC, WAF)</div>
-        <div class="skill">Secure Architecture &amp; Server Hardening</div>
-        <div class="skill">Backup, Recovery &amp; Restore Testing</div>
-        <div class="skill">Cloud Security Auditing &amp; Risk Assessment</div>
-        <div class="skill">Static Code Analysis (Checkov, Bridgecrew)</div>
-        <div class="skill">NCA CCC &amp; PDPL Compliance</div>
-        <div class="skill">Git &amp; GitHub Access Management</div>
-        <div class="skill">Linux (Kali Linux) &amp; Windows Server</div>
-        <div class="skill">Analytical Problem Solving</div>
-        <div class="skill">Strategic Security Thinking</div>
-        <div class="skill">Detail-Oriented</div>
-        <div class="skill">Continuous Learning</div>
-        <div class="skill">Time Management &amp; Multitasking</div>
-        <div class="skill">Leadership &amp; Teamwork</div>
+      <div class="sgroups">
+        <div class="sgroup reveal"><h4>Cloud &amp; Infrastructure</h4><div class="chips"><span class="chip">Cloud Security &amp; Governance</span><span class="chip">Infrastructure as Code (Terraform)</span><span class="chip">Multi-Cloud Security (AWS &amp; Azure)</span><span class="chip">Secure Architecture &amp; Server Hardening</span><span class="chip">Backup, Recovery &amp; Restore Testing</span><span class="chip">Content Delivery &amp; Edge Security (CDN, OAC, WAF)</span><span class="chip">Linux (Kali Linux) &amp; Windows Server</span></div></div>
+        <div class="sgroup reveal"><h4>Identity &amp; Access</h4><div class="chips"><span class="chip">Identity &amp; Access Management (IAM)</span><span class="chip">Least-Privilege Policy Design (PoLP)</span><span class="chip">AWS IAM &amp; Azure Entra ID</span><span class="chip">Role-Based Access Control (RBAC)</span><span class="chip">Git &amp; GitHub Access Management</span></div></div>
+        <div class="sgroup reveal"><h4>Security &amp; Compliance</h4><div class="chips"><span class="chip">Network Security Groups &amp; Firewall Hardening</span><span class="chip">Encryption &amp; Key Management (KMS, TLS/SSL)</span><span class="chip">Cloud Security Auditing &amp; Risk Assessment</span><span class="chip">Static Code Analysis (Checkov, Bridgecrew)</span><span class="chip">NCA CCC &amp; PDPL Compliance</span></div></div>
+        <div class="sgroup reveal"><h4>Professional Skills</h4><div class="chips"><span class="chip">Analytical Problem Solving</span><span class="chip">Strategic Security Thinking</span><span class="chip">Detail-Oriented</span><span class="chip">Continuous Learning</span><span class="chip">Time Management &amp; Multitasking</span><span class="chip">Leadership &amp; Teamwork</span></div></div>
       </div>
     </div>
   </section>
