@@ -187,6 +187,15 @@ body{margin:0}
 .chip{font-size:14px;font-weight:600;padding:6px 12px;border-radius:999px;background:var(--soft);color:var(--fg);transition:background .25s,color .25s}
 .chip:hover{background:var(--accent);color:#fff}
 @media (max-width:900px){.sgroups{grid-template-columns:1fr}}
+
+.certs{grid-template-columns:repeat(3,1fr)}
+.cert.pending{background:var(--surface);color:var(--fg);border:1.5px dashed var(--accent-2)}
+.cert.pending::before,.cert.pending::after{border-color:color-mix(in srgb,var(--accent-2) 30%,transparent)}
+.cert.pending span{color:var(--muted)}
+.cert.pending .badge-ip{position:absolute;top:22px;left:24px;font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--accent);background:var(--soft);padding:5px 11px;border-radius:999px}
+.cert-open .eye{white-space:nowrap}
+.cert.pending .badge-ip{position:static;align-self:flex-start;margin-bottom:auto}
+@media (max-width:900px){.certs{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -353,6 +362,7 @@ body{margin:0}
       <div class="certs">
         <div class="cert reveal"><h3><button class="cert-open" type="button" data-img="cert-securityplus.jpg" data-title="CompTIA Security+">Security+ <span class="eye">View ↗</span></button></h3><span>Jan 2025 · 2025–2028</span></div>
         <div class="cert reveal"><h3><button class="cert-open" type="button" data-img="cert-az900.jpg" data-title="Microsoft Azure Fundamentals (AZ-900)">Microsoft Azure Fundamental AZ-900 <span class="eye">View ↗</span></button></h3><span>Microsoft · Jan 2026</span></div>
+        <div class="cert pending reveal"><span class="badge-ip">In Progress</span><h3>AWS Certified Security – Specialty</h3><span>Amazon Web Services</span></div>
       </div>
     </div>
   </section>
