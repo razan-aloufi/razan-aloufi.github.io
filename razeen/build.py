@@ -1,6 +1,8 @@
 """يبني ملف أعمال أكاديمية رزين (عربي: razeen/index.html، إنجليزي: razeen/en/index.html).
 عدّلي المحتوى هنا ثم شغّلي:  python3 razeen/build.py"""
-import html, pathlib
+import html, pathlib, sys
+sys.path.insert(0, str(pathlib.Path(__file__).resolve().parent))
+from labs_section import section as labs_section, C as LABS_C
 
 ROOT = pathlib.Path(__file__).resolve().parent
 SITE = "https://razeen-academy.pages.dev"
@@ -213,7 +215,7 @@ def page(lang):
 <a class="skip" href="#main">{t["skip"]}</a>
 <header class="top"><div class="wrap">
   <a class="brand" href="#top"><img src="{a}logo-stamp.svg" alt="" width="42" height="42"><span>{E(t["brand"])}<small>{t["brand_sub"]}</small></span></a>
-  <nav aria-label="{E(t['title'])}">''' + "".join(f'<a href="{h}">{E(l)}</a>' for h, l in t["nav"]) + f'''<a class="lang" href="{t["other"]}" lang="{'ar' if lang=='en' else 'en'}">{t["other_lbl"]}</a><a class="solid" href="{site}">{E(t["visit"])}</a></nav>
+  <nav aria-label="{E(t['title'])}">''' + "".join(f'<a href="{h}">{E(l)}</a>' for h, l in (t["nav"][:2] + [("#method", LABS_C[lang]["nav"])] + t["nav"][2:])) + f'''<a class="lang" href="{t["other"]}" lang="{'ar' if lang=='en' else 'en'}">{t["other_lbl"]}</a><a class="solid" href="{site}">{E(t["visit"])}</a></nav>
 </div></header>
 <main id="main">
 <section class="hero" id="top"><div class="wrap">
@@ -245,6 +247,9 @@ def page(lang):
 <h3 style="margin:2.2rem 0 1rem;font-weight:400;font-size:1.3rem">{E(t["specs_h"])}</h3>
 <div class="grid g3 specs">''' + "".join(f'<article class="card"><h3>{E(g)} · {len(s)}</h3><div class="chips">' + "".join(f'<span>{E(x)}</span>' for x in s) + '</div></article>' for g, s in t["groups"]) +
       f'</div><p class="note">{E(t["specs_note"])}</p></div></section>')
+
+    # كيف تعمل المختبرات (labs_section.py)
+    o.append(labs_section(lang))
 
     # الخدمات
     o.append(f'''<section class="file" id="services"><div class="wrap">
