@@ -33,11 +33,10 @@ T["ar"] = dict(
   facts=[("15", "تخصصًا سحابيًا"), ("3", "مزوّدين: AWS وAzure وGoogle"), ("8", "مختبرات وتحديات مجانية منشورة"), ("4", "مستويات من المبتدئ للاحترافي"), ("2", "لغتان: العربية والإنجليزية")],
   # عنّي
   k_about="FILE-01 · FOUNDER", h_about="عن المؤسِّسة",
-  name="رزان العوفي", role="مؤسِّسة أكاديمية رزين · أخصائية أمن سحابي",
-  dl=[("التخصص", "أمن الحوسبة السحابية"), ("الشهادات", "CompTIA Security+ · Microsoft AZ-900"), ("قيد الإنجاز", "AWS Certified Security – Specialty"),
-      ("التعليم", "دبلوم الأمن السيبراني، جامعة القصيم (المعدل 4.72 من 5)"), ("أدرس حاليًا", "الامتثال والحوكمة السيبرانية، الجامعة السعودية الإلكترونية"), ("المدينة", "المدينة المنورة، المملكة العربية السعودية")],
+  name="رزان العوفي", role="مؤسِّسة أكاديمية رزين · أخصائية حوسبة سحابية",
+  dl=[("التخصص", "أخصائية حوسبة سحابية")],
   about_p=[
-    "أعمل في أمن الحوسبة السحابية بشكل يومي: بناء البنية، وتأمينها، ومطابقتها مع ضوابط الأمن السيبراني للحوسبة السحابية (NCA CCC) ونظام حماية البيانات الشخصية (PDPL).",
+    "أعمل في الحوسبة السحابية بجميع تخصصاتها بشكل يومي: بناء البنية، وتأمينها، ومطابقتها مع ضوابط الأمن السيبراني للحوسبة السحابية (NCA CCC) ونظام حماية البيانات الشخصية (PDPL).",
     "لاحظت أن أغلب المحتوى العملي في السحابة مكتوب بالإنجليزية، وأن كثيرًا من المتعلمين يدرسون النظريات بدون أن يلمسوا بيئة حقيقية، وبدون ربطها بالأنظمة التي تُطبَّق فعلًا في السعودية.",
     "بنيت رزين لتسدّ هذه الفجوة: مختبرات تحلّها بيدك، بلغة تفهمها، وكل ثغرة فيها مرتبطة بالضابط الذي تخالفه.",
   ],
@@ -65,12 +64,15 @@ T["ar"] = dict(
             ("users", "باقات الفرق", "soon", "مقاعد لموظفي الشركات أو طلاب الدفعة، مع لوحة لمسؤول الفريق وتقارير تقدّم قابلة للتصدير."),
             ("cloud", "جلسات البيئة الحقيقية", "soon", "بيئة سحابية معزولة لكل متدرب تُنشأ تلقائيًا وتُحذف بعد الجلسة، بدون أن يحتاج حسابًا سحابيًا خاصًا به.")],
   # لماذا الاشتراك
-  k_why="FILE-04 · WHY PAID", h_why="لماذا بعض المختبرات باشتراك؟",
-  why_p=["المختبرات في رزين لا تعمل على محاكاة في المتصفح فقط، بل على حسابات سحابية حقيقية تملكها الأكاديمية: المتدرب لا يحتاج حسابًا ولا بطاقة ائتمان، والأكاديمية تتحمل التكلفة.",
-         "كل جلسة لمتدرب في المستوى المتوسط أو المتقدم تعني بيئة معزولة تُنشأ له وحده: خوادم، وشبكات، وصلاحيات، وتخزين، وسجلات مراقبة. هذه موارد تُحسب بالدقيقة عند مزوّد الخدمة.",
-         "لذلك يبقى المستوى المبتدئ مجانيًا بالكامل مع حلوله وتلميحاته، ويغطي الاشتراك تكلفة البيئات الحقيقية وتطوير محتوى جديد كل شهر، بأسعار مناسبة للطلاب."],
-  cost_h="التكلفة الشهرية الأساسية للبنية", cost_rows=[("البنية الأساسية على AWS وAzure وGoogle Cloud", "≈ 184 ر.س"), ("استضافة المنصة وقاعدة البيانات (Cloudflare)", "≈ 19 ر.س"), ("تكلفة جلسات المتدربين", "تزيد مع كل جلسة")],
-  cost_tot=("قبل أي متدرب", "≈ 203 ر.س / شهر"), cost_note="أرقام تقديرية من جرد التكلفة الداخلي لنوفمبر 2026، وتتغير حسب الاستخدام وأسعار المزودين.",
+  k_why="FILE-04 · SUBSCRIBER BENEFITS", h_why="ماذا يحصل عليه المشترك؟", p_why="المستوى المبتدئ يبقى مجانيًا بالكامل مع حلوله وتلميحاته، والاشتراك يفتح لك ما بعده:",
+  benefits=[("lab", "مختبرات المستوى المتوسط والمتقدم", "سيناريوهات أعمق تحاكي حوادث حقيقية في الشركات، حسب باقتك."),
+            ("cloud", "بيئة سحابية حقيقية لك وحدك", "جلسات في بيئة معزولة (25 جلسة شهريًا في الأساسية و50 في الاحترافية)، بدون حساب سحابي خاص ولا بطاقة ائتمان."),
+            ("path", "محتوى جديد باستمرار", "مختبرات وتحديات جديدة تُضاف كل شهر على AWS وAzure وGoogle Cloud."),
+            ("shield", "إتقان المعايير السعودية", "كل ثغرة مرتبطة بضوابط NCA CCC وPDPL، مع نسبة إتقانك لكل ضابط وشرح له."),
+            ("cert", "شهادات إتمام قابلة للتحقق", "شهادة لكل مسار تكمله، يمكن لجهة التوظيف التحقق منها مباشرة."),
+            ("trophy", "لوحة الصدارة والملف الشخصي", "نقاطك وإنجازاتك في لوحة الصدارة، وملف عام تشاركه مع جهات التوظيف."),
+            ("flag", "فعاليات CTF والمعسكرات", "أولوية المشاركة في فعاليات رزين ومعسكراتها مع الجهات الشريكة."),
+            ("users", "أسعار وخصومات للطلاب", "خصم الطلاب 25٪ على السنوي، وعرض المؤسسين لأول 100 مشترك.")],
   # الباقات
   k_plans="FILE-05 · PLANS", h_plans="الباقات والأسعار", p_plans="الأسعار بالريال السعودي. الاشتراك السنوي يوفّر حتى 29٪ مقارنة بالشهري.",
   th=["الباقة", "السعر", "المستويات", "جلسات البيئة الحقيقية", "مناسبة لـ"],
@@ -90,14 +92,14 @@ T["ar"] = dict(
   vis_lead="أن تكون رزين المنصة العربية الأولى للتطبيق العملي في الحوسبة السحابية، والجسر بين ما يتعلمه الطالب وما يحتاجه سوق العمل السعودي.",
   vision=[("cert", "قسائم وخصومات على الشهادات", "سأتواصل مع مزودي الخدمات السحابية (AWS وMicrosoft وGoogle Cloud) ومراكز الاختبار لتوفير قسائم (Vouchers) وخصومات على شهاداتهم المهنية لمشتركي رزين، فيكون التدريب والاختبار في مكان واحد."),
           ("cloud", "تغطية المزودين الثلاثة", "كل تخصص من الخمسة عشر على AWS وAzure وGoogle Cloud، ليقارن المتدرب بين المزودين ويختار ما يناسب سوقه."),
-          ("shield", "بيانات داخل المملكة", "نقل بيانات المنصة إلى منطقة سحابية داخل السعودية عند توفرها، تماشيًا مع نظام حماية البيانات الشخصية."),
+          ("path", "أقسام جديدة مثل المسار الوظيفي", "أقسام تربط ما يتعلمه المتدرب بالوظائف السحابية في السوق: المسار الوظيفي لكل تخصص، والمهارات والشهادات المطلوبة لكل دور."),
           ("users", "شراكات تعليمية", "برامج مستمرة مع الأندية الطلابية والجامعات والشركات، تشمل فعاليات CTF ومعسكرات ومقاعد للفرق.")],
   # الخطة
-  k_road="FILE-07 · 12-MONTH PLAN", h_road="الخطة لمدة سنة", p_road="ديسمبر 2026 – نوفمبر 2027. الخطة قابلة للتعديل حسب احتياج المتدربين والشركاء.",
-  road=[("Q1 · ديسمبر – فبراير", "الإطلاق التجاري", ["فتح الاشتراكات المدفوعة عبر بوابة دفع سعودية", "تفعيل عرض المؤسسين لأول 100 مشترك", "تشغيل البيئات المعزولة لكل متدرب", "أول مختبرات المستوى المتوسط على AWS"]),
-        ("Q2 · مارس – مايو", "التوسع للمزودين", ["إطلاق مسار Microsoft Azure", "أول مختبرات Google Cloud", "إطلاق برنامج الأندية الطلابية", "أول شراكة تجريبية مع جامعة"]),
-        ("Q3 · يونيو – أغسطس", "الشهادات والشركات", ["إطلاق المستوى المتقدم", "تفعيل باقات الفرق ولوحة الشركات", "التواصل مع المزودين لاتفاقيات قسائم الشهادات", "معسكرات صيفية مع جهات تدريبية"]),
-        ("Q4 · سبتمبر – نوفمبر", "النضج", ["إطلاق المستوى الاحترافي", "فعالية CTF سنوية مفتوحة باسم رزين", "نقل البيانات إلى منطقة سحابية سعودية", "تقرير سنوي بالأثر والإحصاءات"])],
+  k_road="FILE-07 · 12-MONTH PLAN", h_road="الخطة لمدة سنة", p_road="الخطة قابلة للتعديل حسب احتياج المتدربين والشركاء.",
+  road=[("المرحلة 1", "الإطلاق التجاري", ["فتح الاشتراكات المدفوعة عبر بوابة دفع سعودية", "تفعيل عرض المؤسسين لأول 100 مشترك", "تشغيل البيئات المعزولة لكل متدرب"]),
+        ("المرحلة 2", "التوسع للمزودين", ["إطلاق مسار Microsoft Azure", "أول مختبرات Google Cloud", "إطلاق برنامج الأندية الطلابية"]),
+        ("المرحلة 3", "الشهادات والشركات", ["التواصل مع مزودي الخدمات السحابية للحصول على قسائم (Vouchers) وخصومات على الشهادات", "إطلاق المستوى المتقدم", "تفعيل باقات الفرق ولوحة الشركات", "معسكرات مع جهات تدريبية"]),
+        ("المرحلة 4", "أقسام ومستويات جديدة", ["إضافة أقسام جديدة للموقع مثل المسار الوظيفي وغيرها", "إطلاق المستوى الاحترافي", "فعالية CTF سنوية مفتوحة باسم رزين", "تقرير سنوي بالأثر والإحصاءات"])],
   # الشراكات
   k_par="FILE-08 · PARTNERSHIPS", h_par="ما نقدّمه للأندية والجامعات والشركات",
   partners=[("STUDENT CLUBS", "الأندية الطلابية", ["استضافة فعاليات CTF مجانًا مع لوحة صدارة مباشرة", "كوبون خصم خاص لأعضاء النادي", "ورش عمل عملية مشتركة على المنصة", "إبراز النادي كشريك في صفحات الفعالية"]),
@@ -118,11 +120,10 @@ T["en"] = dict(
   cta1="Try it free", cta2="Contact us", print="Download PDF",
   facts=[("15", "cloud specializations"), ("3", "providers: AWS, Azure, Google"), ("8", "free labs and challenges published"), ("4", "levels, beginner to professional"), ("2", "languages: Arabic and English")],
   k_about="FILE-01 · FOUNDER", h_about="About the founder",
-  name="Razan Aloufi", role="Founder, Razeen Academy · Cloud Security Specialist",
-  dl=[("Specialty", "Cloud security"), ("Certifications", "CompTIA Security+ · Microsoft AZ-900"), ("In progress", "AWS Certified Security – Specialty"),
-      ("Education", "Cybersecurity Diploma, Qassim University (GPA 4.72 / 5)"), ("Studying", "Compliance & Cyber Governance, Saudi Electronic University"), ("Based in", "Madinah, Saudi Arabia")],
+  name="Razan Aloufi", role="Founder, Razeen Academy · Cloud Computing Specialist",
+  dl=[("Specialty", "Cloud Computing Specialist")],
   about_p=[
-    "I work in cloud security every day: building infrastructure, securing it, and aligning it with Saudi Arabia's Cloud Cybersecurity Controls (NCA CCC) and the Personal Data Protection Law (PDPL).",
+    "I work across every area of cloud computing, every day: building infrastructure, securing it, and aligning it with Saudi Arabia's Cloud Cybersecurity Controls (NCA CCC) and the Personal Data Protection Law (PDPL).",
     "Most hands-on cloud content is written in English, and many learners study the theory without ever touching a real environment — or connecting it to the regulations that actually apply in Saudi Arabia.",
     "I built Razeen to close that gap: labs you solve yourself, in a language you think in, with every vulnerability tied to the control it breaks.",
   ],
@@ -147,12 +148,15 @@ T["en"] = dict(
             ("tent", "Bootcamps", "now", "Intensive bootcamps with partner organizers, including custom labs and a final challenge day."),
             ("users", "Team plans", "soon", "Seats for employees or a student cohort, with a manager dashboard and exportable progress reports."),
             ("cloud", "Real-environment sessions", "soon", "An isolated cloud environment per learner, created automatically and removed after the session — no personal cloud account needed.")],
-  k_why="FILE-04 · WHY PAID", h_why="Why are some labs paid?",
-  why_p=["Razeen labs don't just run as a browser simulation — they run on real cloud accounts owned by the academy. Learners need no cloud account and no credit card; the academy carries the cost.",
-         "Every intermediate or advanced session means an isolated environment built for one learner: servers, networks, permissions, storage and monitoring logs. Providers bill these resources by the minute.",
-         "That's why the beginner level stays completely free, with solutions and hints, while the subscription covers real environments and new content every month — at student-friendly prices."],
-  cost_h="Baseline monthly infrastructure cost", cost_rows=[("Baseline on AWS, Azure and Google Cloud", "≈ SAR 184"), ("Platform hosting and database (Cloudflare)", "≈ SAR 19"), ("Learner sessions", "grows with every session")],
-  cost_tot=("Before a single learner", "≈ SAR 203 / month"), cost_note="Estimates from the internal cost inventory, November 2026; they change with usage and provider pricing.",
+  k_why="FILE-04 · SUBSCRIBER BENEFITS", h_why="What subscribers get", p_why="The beginner level stays completely free, with solutions and hints. A subscription unlocks everything after it:",
+  benefits=[("lab", "Intermediate and advanced labs", "Deeper scenarios that simulate real incidents at companies, depending on your plan."),
+            ("cloud", "A real cloud environment of your own", "Sessions in an isolated environment (25 a month on Basic, 50 on Professional) — no personal cloud account or credit card needed."),
+            ("path", "Fresh content all the time", "New labs and challenges every month on AWS, Azure and Google Cloud."),
+            ("shield", "Saudi regulations mastery", "Every flaw mapped to NCA CCC and PDPL controls, with your mastery of each control and an explanation."),
+            ("cert", "Verifiable completion certificates", "A certificate for every track you complete, verifiable directly by employers."),
+            ("trophy", "Leaderboard and public profile", "Your points and achievements on the leaderboard, and a public profile to share with employers."),
+            ("flag", "CTF events and bootcamps", "Priority access to Razeen events and bootcamps with partner organizations."),
+            ("users", "Student-friendly pricing", "25% student discount on yearly plans, and the founders offer for the first 100 subscribers.")],
   k_plans="FILE-05 · PLANS", h_plans="Plans and pricing", p_plans="Prices in Saudi riyals. Yearly saves up to 29% compared with monthly.",
   th=["Plan", "Price", "Levels", "Real-environment sessions", "Best for"],
   plans=[("Free", "0", "", "Beginner, with solutions and hints", "—", "Anyone starting in cloud"),
@@ -170,13 +174,13 @@ T["en"] = dict(
   vis_lead="To make Razeen the leading Arabic platform for hands-on cloud learning — the bridge between what students learn and what the Saudi job market needs.",
   vision=[("cert", "Certification vouchers and discounts", "I will reach out to cloud providers (AWS, Microsoft and Google Cloud) and testing centers to offer vouchers and discounts on their professional certifications for Razeen subscribers — training and exam in one place."),
           ("cloud", "All three providers", "Every one of the fifteen specializations on AWS, Azure and Google Cloud, so learners can compare providers and choose what fits their market."),
-          ("shield", "Data inside the Kingdom", "Move platform data to a cloud region inside Saudi Arabia once available, in line with the Personal Data Protection Law."),
+          ("path", "New sections such as career paths", "Sections that connect learning to real cloud jobs: a career path for each specialization, with the skills and certifications each role needs."),
           ("users", "Education partnerships", "Ongoing programs with student clubs, universities and companies, including CTF events, bootcamps and team seats.")],
-  k_road="FILE-07 · 12-MONTH PLAN", h_road="The 12-month plan", p_road="December 2026 – November 2027. The plan adapts to what learners and partners need.",
-  road=[("Q1 · Dec – Feb", "Commercial launch", ["Open paid subscriptions through a Saudi payment gateway", "Activate the founders offer for the first 100", "Run isolated per-learner environments", "First intermediate labs on AWS"]),
-        ("Q2 · Mar – May", "More providers", ["Launch the Microsoft Azure track", "First Google Cloud labs", "Launch the student clubs program", "First pilot partnership with a university"]),
-        ("Q3 · Jun – Aug", "Certifications and companies", ["Launch the advanced level", "Activate team plans and the company dashboard", "Reach out to providers for certification voucher agreements", "Summer bootcamps with training partners"]),
-        ("Q4 · Sep – Nov", "Maturity", ["Launch the professional level", "An open annual Razeen CTF", "Move data to a Saudi cloud region", "An annual impact and statistics report"])],
+  k_road="FILE-07 · 12-MONTH PLAN", h_road="The 12-month plan", p_road="The plan adapts to what learners and partners need.",
+  road=[("Phase 1", "Commercial launch", ["Open paid subscriptions through a Saudi payment gateway", "Activate the founders offer for the first 100", "Run isolated per-learner environments"]),
+        ("Phase 2", "More providers", ["Launch the Microsoft Azure track", "First Google Cloud labs", "Launch the student clubs program"]),
+        ("Phase 3", "Certifications and companies", ["Reach out to cloud providers for certification vouchers and discounts", "Launch the advanced level", "Activate team plans and the company dashboard", "Bootcamps with training partners"]),
+        ("Phase 4", "New sections and levels", ["Add new site sections such as career paths and more", "Launch the professional level", "An open annual Razeen CTF", "An annual impact and statistics report"])],
   k_par="FILE-08 · PARTNERSHIPS", h_par="What we offer clubs, universities and companies",
   partners=[("STUDENT CLUBS", "Student clubs", ["Free CTF event hosting with a live leaderboard", "A dedicated discount code for club members", "Co-hosted hands-on workshops on the platform", "Featured as a partner on event pages"]),
             ("UNIVERSITIES", "Universities", ["25% student discount on yearly plans", "Seats for whole cohorts with an instructor dashboard", "Exportable student progress reports", "Labs mapped to NCA CCC and PDPL that complement courses"]),
@@ -217,7 +221,7 @@ def page(lang):
     <span class="badge">{E(t["badge"])}</span>
     <h1>{t["h1"]}</h1>
     <p class="lead">{E(t["lead"])}</p>
-    <div class="acts noprint"><a class="cta primary" href="{site}">{E(t["cta1"])}</a><a class="cta" href="#contact">{E(t["cta2"])}</a><button class="cta" type="button" id="print">{E(t["print"])}</button></div>
+    <div class="acts noprint"><a class="cta primary" href="{site}">{E(t["cta1"])}</a><a class="cta" href="#contact">{E(t["cta2"])}</a></div>
   </div>
   <div class="seal"><img src="{a}logo-stamp.svg" alt="{E(t['brand'])}" width="300" height="300"></div>
 </div>
@@ -247,13 +251,10 @@ def page(lang):
 <div class="sec-h"><span class="kick">{t["k_srv"]}</span><h2>{E(t["h_srv"])}</h2><p>{E(t["p_srv"])}</p></div>
 <div class="grid g4">''' + "".join(f'<article class="card">{icon(i)}<h3>{E(h)} <span class="tag {tagcls[s]}">{E(t[s])}</span></h3><p>{E(p)}</p></article>' for i, h, s, p in t["services"]) + '</div></div></section>')
 
-    # لماذا مدفوع
+    # مميزات المشتركين
     o.append(f'''<section class="file" id="why"><div class="wrap">
-<div class="sec-h"><span class="kick">{t["k_why"]}</span><h2>{E(t["h_why"])}</h2></div>
-<div class="cost"><div>''' + "".join(f'<p style="margin:0 0 1rem;color:var(--muted)">{E(p)}</p>' for p in t["why_p"]) + f'''</div>
-<div class="meter card lift"><span class="kick">COST · SAR / MONTH</span><h3 style="font-weight:400;margin:0 0 .6rem">{E(t["cost_h"])}</h3>''' +
-      "".join(f'<div class="row"><span>{E(k)}</span><b>{E(v)}</b></div>' for k, v in t["cost_rows"]) +
-      f'<div class="row tot"><span>{E(t["cost_tot"][0])}</span><b>{E(t["cost_tot"][1])}</b></div></div></div><p class="note">{E(t["cost_note"])}</p></div></section>')
+<div class="sec-h"><span class="kick">{t["k_why"]}</span><h2>{E(t["h_why"])}</h2><p>{E(t["p_why"])}</p></div>
+<div class="grid g4">''' + "".join(f'<article class="card{" lift" if i < 2 else ""}">{icon(ic)}<h3>{E(h)}</h3><p>{E(p)}</p></article>' for i, (ic, h, p) in enumerate(t["benefits"])) + '</div></div></section>')
 
     # الباقات
     cur = "SAR" if lang == "en" else "ر.س"
@@ -286,7 +287,6 @@ def page(lang):
 <div class="links">''' + "".join(f'<a href="{u}"' + ('' if u.startswith("mailto") else ' target="_blank" rel="noopener"') + f'><b>{E(l)}</b><span>{E(v)}</span></a>' for l, v, u in t["links"]) + f'''</div></div></div></section>
 </main>
 <footer class="wrap"><span>{E(t["foot"])}</span><span>{E(t["foot2"])}</span></footer>
-<script src="{a}portfolio.js"></script>
 </body></html>
 ''')
     return "\n".join(o)
