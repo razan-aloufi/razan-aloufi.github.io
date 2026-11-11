@@ -104,7 +104,7 @@ T["ar"] = dict(
         ("المرحلة 4", "أقسام ومستويات جديدة", ["إضافة مسارات وظيفية لاحتراف تخصصات الكلاود بالتطبيق العملي", "إطلاق المستوى الاحترافي", "فعالية CTF سنوية مفتوحة باسم رزين", "تقرير سنوي بالأثر والإحصاءات"])],
   # الشراكات
   k_par="FILE-08 · PARTNERSHIPS", h_par="ما نقدّمه للأندية والجامعات والشركات",
-  partners=[("STUDENT CLUBS", "الأندية الطلابية", ["استضافة فعاليات CTF مجانًا مع لوحة صدارة مباشرة", "كوبون خصم خاص لأعضاء النادي", "ورش عمل عملية مشتركة على المنصة", "إبراز النادي كشريك في صفحات الفعالية"]),
+  partners=[("STUDENT CLUBS", "الأندية الطلابية", ["استضافة فعاليات CTF مع لوحة صدارة مباشرة", "كوبون خصم خاص لأعضاء النادي", "ورش عمل عملية مشتركة على المنصة", "إبراز النادي كشريك في صفحات الفعالية"]),
             ("UNIVERSITIES", "الجامعات", ["خصم الطلاب 25٪ على الاشتراك السنوي", "مقاعد لدفعات كاملة بلوحة للمشرف الأكاديمي", "تقارير تقدّم للطلاب قابلة للتصدير", "مختبرات مرتبطة بـ NCA CCC وPDPL تكمل المقررات"]),
             ("COMPANIES", "الشركات", ["مقاعد للموظفين بـ 80 ر.س للمقعد شهريًا", "لوحة لمسؤول الفريق وتقارير CSV وPDF", "معسكرات خاصة بمحتوى يناسب بيئة الشركة", "فعاليات CTF داخلية لفرق الأمن والتقنية"])],
   # تواصل
@@ -184,7 +184,7 @@ T["en"] = dict(
         ("Phase 3", "Certifications and companies", ["Reach out to cloud providers for certification vouchers and discounts", "Launch the advanced level", "Activate team plans and the company dashboard", "Bootcamps with training partners"]),
         ("Phase 4", "New sections and levels", ["Add career paths to master cloud specializations through hands-on practice", "Launch the professional level", "An open annual Razeen CTF", "An annual impact and statistics report"])],
   k_par="FILE-08 · PARTNERSHIPS", h_par="What we offer clubs, universities and companies",
-  partners=[("STUDENT CLUBS", "Student clubs", ["Free CTF event hosting with a live leaderboard", "A dedicated discount code for club members", "Co-hosted hands-on workshops on the platform", "Featured as a partner on event pages"]),
+  partners=[("STUDENT CLUBS", "Student clubs", ["CTF event hosting with a live leaderboard", "A dedicated discount code for club members", "Co-hosted hands-on workshops on the platform", "Featured as a partner on event pages"]),
             ("UNIVERSITIES", "Universities", ["25% student discount on yearly plans", "Seats for whole cohorts with an instructor dashboard", "Exportable student progress reports", "Labs mapped to NCA CCC and PDPL that complement courses"]),
             ("COMPANIES", "Companies", ["Employee seats at SAR 80 per seat per month", "A team-manager dashboard with CSV and PDF reports", "Private bootcamps tailored to your environment", "Internal CTF events for security and tech teams"])],
   h_con="Let's build a partnership", p_con="Student clubs, universities, companies and bootcamp organizers: get in touch and we'll design a program around you.",
