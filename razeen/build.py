@@ -74,7 +74,7 @@ T["ar"] = dict(
             ("cert", "شهادات إتمام قابلة للتحقق", "شهادة لكل مسار تكمله، يمكن لجهة التوظيف التحقق منها مباشرة."),
             ("trophy", "لوحة الصدارة والملف الشخصي", "نقاطك وإنجازاتك في لوحة الصدارة، وملف عام تشاركه مع جهات التوظيف."),
             ("flag", "فعاليات CTF والمعسكرات", "أولوية المشاركة في فعاليات رزين ومعسكراتها مع الجهات الشريكة."),
-            ("users", "أسعار وخصومات للطلاب", "خصم الطلاب 15٪ على السنوي، وعرض المؤسسين لأول 100 مشترك.")],
+            ("users", "عرض المؤسسين", "سعر خاص على الاشتراك السنوي لأول 100 مشترك.")],
   # الباقات
   k_plans="FILE-05 · PLANS", h_plans="الباقات والأسعار", p_plans="الأسعار بالريال السعودي. الاشتراك السنوي يوفّر حتى 29٪ مقارنة بالشهري.",
   th=["الباقة", "السعر", "المستويات", "جلسات البيئة الحقيقية", "مناسبة لـ"],
@@ -86,7 +86,6 @@ T["ar"] = dict(
   plans_note="إلغاء التجديد يبقي الوصول حتى نهاية الفترة المدفوعة، وعند انتهاء الاشتراك يعود الحساب للمجانية مع الاحتفاظ بكل التقدّم والشهادات. فتح الدفع الإلكتروني للاشتراكات قريبًا.",
   disc_h="الخصومات",
   discounts=[("عرض المؤسسين", "لأول 100 مشترك فقط", "الأساسية السنوية بـ 270 ر.س بدل 450، والاحترافية السنوية بـ 510 ر.س بدل 850 (خصم 40٪)."),
-             ("خصم الطلاب", "15٪ على السنوي", "لطلاب الجامعات بعد التحقق من البريد الجامعي، صالح لمدة سنة."),
              ("كوبونات الشركاء", "للأندية والفعاليات", "أكواد خصم خاصة لأعضاء الأندية الطلابية ومشاركي المعسكرات والفعاليات."),
              ("سياسة الخصم", "أفضل خصم واحد", "لا تُجمع الخصومات، ويُطبَّق تلقائيًا الخصم الأفضل للمتدرب، ويُحسب في الخادم فقط.")],
   # التوجه
@@ -105,7 +104,7 @@ T["ar"] = dict(
   # الشراكات
   k_par="FILE-08 · PARTNERSHIPS", h_par="ما نقدّمه للأندية والجامعات والشركات",
   partners=[("STUDENT CLUBS", "الأندية الطلابية", ["استضافة فعاليات CTF مع لوحة صدارة مباشرة", "كوبون خصم خاص لأعضاء النادي", "ورش عمل عملية مشتركة على المنصة", "إبراز النادي كشريك في صفحات الفعالية"]),
-            ("UNIVERSITIES", "الجامعات", ["خصم الطلاب 15٪ على الاشتراك السنوي", "مقاعد لدفعات كاملة بلوحة للمشرف الأكاديمي", "تقارير تقدّم للطلاب قابلة للتصدير", "مختبرات مرتبطة بـ NCA CCC وPDPL تكمل المقررات"]),
+            ("UNIVERSITIES", "الجامعات", ["مقاعد لدفعات كاملة بلوحة للمشرف الأكاديمي", "تقارير تقدّم للطلاب قابلة للتصدير", "مختبرات مرتبطة بـ NCA CCC وPDPL تكمل المقررات"]),
             ("COMPANIES", "الشركات", ["مقاعد للموظفين بـ 80 ر.س للمقعد شهريًا", "لوحة لمسؤول الفريق وتقارير CSV وPDF", "معسكرات خاصة بمحتوى يناسب بيئة الشركة", "فعاليات CTF داخلية لفرق الأمن والتقنية"])],
   # تواصل
   h_con="لنبنِ شراكة", p_con="للأندية والجامعات والشركات والجهات المنظمة للمعسكرات: تواصلوا معنا لتصميم برنامج يناسبكم.",
@@ -158,7 +157,7 @@ T["en"] = dict(
             ("cert", "Verifiable completion certificates", "A certificate for every track you complete, verifiable directly by employers."),
             ("trophy", "Leaderboard and public profile", "Your points and achievements on the leaderboard, and a public profile to share with employers."),
             ("flag", "CTF events and bootcamps", "Priority access to Razeen events and bootcamps with partner organizations."),
-            ("users", "Student-friendly pricing", "15% student discount on yearly plans, and the founders offer for the first 100 subscribers.")],
+            ("users", "Founders offer", "A special yearly price for the first 100 subscribers.")],
   k_plans="FILE-05 · PLANS", h_plans="Plans and pricing", p_plans="Prices in Saudi riyals. Yearly saves up to 29% compared with monthly.",
   th=["Plan", "Price", "Levels", "Real-environment sessions", "Best for"],
   plans=[("Free", "0", "", "Beginner, with solutions and hints", "—", "Anyone starting in cloud"),
@@ -169,7 +168,6 @@ T["en"] = dict(
   plans_note="Cancelling renewal keeps access until the end of the paid period. When a subscription ends, the account returns to Free and keeps all progress and certificates. Online payment for subscriptions opens soon.",
   disc_h="Discounts",
   discounts=[("Founders offer", "First 100 subscribers only", "Basic yearly for SAR 270 instead of 450, Professional yearly for SAR 510 instead of 850 (40% off)."),
-             ("Student discount", "15% off yearly", "For university students after verifying their university email; valid for one year."),
              ("Partner coupons", "Clubs and events", "Dedicated discount codes for student club members and bootcamp or event participants."),
              ("Discount policy", "Best single discount", "Discounts don't stack; the best one for the learner is applied automatically and calculated on the server only.")],
   k_vis="FILE-06 · VISION", h_vis="Where the platform is heading",
@@ -185,7 +183,7 @@ T["en"] = dict(
         ("Phase 4", "New sections and levels", ["Add career paths to master cloud specializations through hands-on practice", "Launch the professional level", "An open annual Razeen CTF", "An annual impact and statistics report"])],
   k_par="FILE-08 · PARTNERSHIPS", h_par="What we offer clubs, universities and companies",
   partners=[("STUDENT CLUBS", "Student clubs", ["CTF event hosting with a live leaderboard", "A dedicated discount code for club members", "Co-hosted hands-on workshops on the platform", "Featured as a partner on event pages"]),
-            ("UNIVERSITIES", "Universities", ["15% student discount on yearly plans", "Seats for whole cohorts with an instructor dashboard", "Exportable student progress reports", "Labs mapped to NCA CCC and PDPL that complement courses"]),
+            ("UNIVERSITIES", "Universities", ["Seats for whole cohorts with an instructor dashboard", "Exportable student progress reports", "Labs mapped to NCA CCC and PDPL that complement courses"]),
             ("COMPANIES", "Companies", ["Employee seats at SAR 80 per seat per month", "A team-manager dashboard with CSV and PDF reports", "Private bootcamps tailored to your environment", "Internal CTF events for security and tech teams"])],
   h_con="Let's build a partnership", p_con="Student clubs, universities, companies and bootcamp organizers: get in touch and we'll design a program around you.",
   links=[("Platform", "razeen-academy.pages.dev", SITE), ("Email", "razeenacad@gmail.com", "mailto:razeenacad@gmail.com"), ("X", "@razeenaca", "https://x.com/razeenaca")],
@@ -269,7 +267,7 @@ def page(lang):
       "".join(f'<tr><th scope="row">{E(n)}</th><td class="price">{p} {cur}' + (f'<small>{E(s)}</small>' if s else '') + f'</td><td>{E(l)}</td><td>{E(ss)}</td><td>{E(f)}</td></tr>' for n, p, s, l, ss, f in t["plans"]) +
       f'''</tbody></table></div><p class="note">{E(t["plans_note"])}</p>
 <h3 style="margin:2.2rem 0 1rem;font-weight:400;font-size:1.3rem">{E(t["disc_h"])}</h3>
-<div class="grid g4">''' + "".join(f'<article class="card{" lift" if i == 0 else ""}"><span class="kick">{E(s)}</span><h3>{E(h)}</h3><p>{E(p)}</p></article>' for i, (h, s, p) in enumerate(t["discounts"])) + '</div></div></section>')
+<div class="grid g3">''' + "".join(f'<article class="card{" lift" if i == 0 else ""}"><span class="kick">{E(s)}</span><h3>{E(h)}</h3><p>{E(p)}</p></article>' for i, (h, s, p) in enumerate(t["discounts"])) + '</div></div></section>')
 
     # التوجه
     o.append(f'''<section class="file" id="vision"><div class="wrap">
