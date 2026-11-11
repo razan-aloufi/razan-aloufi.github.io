@@ -68,7 +68,7 @@ T["ar"] = dict(
   # لماذا الاشتراك
   k_why="FILE-04 · SUBSCRIBER BENEFITS", h_why="ماذا يحصل عليه المشترك؟", p_why="المستوى المبتدئ يبقى مجانيًا بالكامل مع حلوله وتلميحاته، والاشتراك يفتح لك ما بعده:",
   benefits=[("lab", "مختبرات المستوى المتوسط والمتقدم", "سيناريوهات أعمق تحاكي حوادث حقيقية في الشركات، حسب باقتك."),
-            ("cloud", "بيئة سحابية حقيقية لك وحدك", "جلسات في بيئة معزولة (25 جلسة شهريًا في الأساسية و50 في الاحترافية)، بدون حساب سحابي خاص ولا بطاقة ائتمان."),
+            ("cloud", "بيئة سحابية حقيقية لك وحدك", "جلسات في بيئة معزولة (25 جلسة شهريًا في الأساسية و50 في الاحترافية)، بدون حساب سحابي خاص ولا بطاقة ائتمان.", "soon"),
             ("path", "محتوى جديد باستمرار", "مختبرات وتحديات جديدة تُضاف كل شهر على AWS وAzure وGoogle Cloud."),
             ("shield", "إتقان المعايير السعودية", "كل ثغرة مرتبطة بضوابط NCA CCC وPDPL، مع نسبة إتقانك لكل ضابط وشرح له."),
             ("cert", "شهادات إتمام قابلة للتحقق", "شهادة لكل مسار تكمله، يمكن لجهة التوظيف التحقق منها مباشرة."),
@@ -152,7 +152,7 @@ T["en"] = dict(
             ("cloud", "Real-environment sessions", "soon", "An isolated cloud environment per learner, created automatically and removed after the session — no personal cloud account needed.")],
   k_why="FILE-04 · SUBSCRIBER BENEFITS", h_why="What subscribers get", p_why="The beginner level stays completely free, with solutions and hints. A subscription unlocks everything after it:",
   benefits=[("lab", "Intermediate and advanced labs", "Deeper scenarios that simulate real incidents at companies, depending on your plan."),
-            ("cloud", "A real cloud environment of your own", "Sessions in an isolated environment (25 a month on Basic, 50 on Professional) — no personal cloud account or credit card needed."),
+            ("cloud", "A real cloud environment of your own", "Sessions in an isolated environment (25 a month on Basic, 50 on Professional) — no personal cloud account or credit card needed.", "soon"),
             ("path", "Fresh content all the time", "New labs and challenges every month on AWS, Azure and Google Cloud."),
             ("shield", "Saudi regulations mastery", "Every flaw mapped to NCA CCC and PDPL controls, with your mastery of each control and an explanation."),
             ("cert", "Verifiable completion certificates", "A certificate for every track you complete, verifiable directly by employers."),
@@ -259,7 +259,7 @@ def page(lang):
     # مميزات المشتركين
     o.append(f'''<section class="file" id="why"><div class="wrap">
 <div class="sec-h"><span class="kick">{t["k_why"]}</span><h2>{E(t["h_why"])}</h2><p>{E(t["p_why"])}</p></div>
-<div class="grid g4">''' + "".join(f'<article class="card{" lift" if i < 2 else ""}">{icon(ic)}<h3>{E(h)}</h3><p>{E(p)}</p></article>' for i, (ic, h, p) in enumerate(t["benefits"])) + '</div></div></section>')
+<div class="grid g4">''' + "".join(f'<article class="card{" lift" if i < 2 else ""}">{icon(b[0])}<h3>{E(b[1])}' + (f' <span class="tag {b[3]}">{E(t[b[3]])}</span>' if len(b) > 3 else '') + f'</h3><p>{E(b[2])}</p></article>' for i, b in enumerate(t["benefits"])) + '</div></div></section>')
 
     # الباقات
     cur = "SAR" if lang == "en" else "ر.س"
